@@ -6,12 +6,18 @@ public class Mentoria extends Conteudo{
 
     private LocalDate data;
 
+    private Mentor mentor;
+
     @Override
     public double calcularXp() {
         return XP_PADRAO + 20d;
     }
 
     public Mentoria() {
+    }
+
+    public void setMentor(Mentor mentor) {
+        this.mentor = mentor;
     }
 
     public LocalDate getData() {
@@ -25,7 +31,8 @@ public class Mentoria extends Conteudo{
     @Override
     public String toString() {
         return "Mentoria{" +
-                "titulo='" + getTitulo() + '\'' +
+                "titulo='" + getTitulo() + "'," +
+                "mentor(a)='" + mentor.getNome() + '\'' +
                 ", descricao='" + getDescricao() + '\'' +
                 ", data=" + data +
                 '}';
